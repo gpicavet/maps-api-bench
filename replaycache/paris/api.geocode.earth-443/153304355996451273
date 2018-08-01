@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=43%20Rue%20Desnouettes%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:25:59 GMT
+content-type: application/json; charset=utf-8
+content-length: 2463
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"99f-C0qctXQoRtjPjVa4Aj2YSgkDIIk"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 46
+x-ratelimit-used-second: 4
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"43 Rue Desnouettes, Paris","parser":"addressit","parsed_text":{"name":"43 Rue Desnouettes","regions":["43 Rue Desnouettes","Paris"],"admin_parts":"Paris"},"tokens":["43","Rue","Desnouettes"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043559914},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.288413,48.835908]},"properties":{"id":"fr/paris:742f018e2379dcce","gid":"openaddresses:address:fr/paris:742f018e2379dcce","layer":"address","source":"openaddresses","source_id":"fr/paris:742f018e2379dcce","name":"43 Rue Desnouettes","housenumber":"43","street":"Rue Desnouettes","postalcode":"75015","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"15th Arrondissement","borough_gid":"whosonfirst:borough:1158894263","neighbourhood":"Saint-Lambert","neighbourhood_gid":"whosonfirst:neighbourhood:85873963","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"43 Rue Desnouettes, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.288195,48.835863]},"properties":{"id":"node:2264901152","gid":"openstreetmap:address:node:2264901152","layer":"address","source":"openstreetmap","source_id":"node:2264901152","name":"43 bis Rue Desnouettes","housenumber":"43 bis","street":"Rue Desnouettes","postalcode":"75015","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"15th Arrondissement","borough_gid":"whosonfirst:borough:1158894263","neighbourhood":"Saint-Lambert","neighbourhood_gid":"whosonfirst:neighbourhood:85873963","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"43 bis Rue Desnouettes, Paris, France"}}],"bbox":[2.288195,48.835863,2.288413,48.835908]}

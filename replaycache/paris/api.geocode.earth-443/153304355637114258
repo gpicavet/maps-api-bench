@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=94%20Rue%20des%20Dames%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:25:56 GMT
+content-type: application/json; charset=utf-8
+content-length: 3426
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"d62-peYusbqBq0qU46u3ezZ0HR1K9Vc"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 49
+x-ratelimit-used-second: 1
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"94 Rue des Dames, Paris","parser":"addressit","parsed_text":{"name":"94 Rue des Dames","regions":["94 Rue des Dames","Paris"],"admin_parts":"Paris"},"tokens":["94","Rue","des","Dames"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043556317},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.317731,48.88293]},"properties":{"id":"fr/paris:923bbbeccaefe6cf","gid":"openaddresses:address:fr/paris:923bbbeccaefe6cf","layer":"address","source":"openaddresses","source_id":"fr/paris:923bbbeccaefe6cf","name":"94 Rue Des Dames","housenumber":"94","street":"Rue Des Dames","postalcode":"75017","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"17th Arrondissement","borough_gid":"whosonfirst:borough:1158894267","neighbourhood":"Batignolles","neighbourhood_gid":"whosonfirst:neighbourhood:420782747","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"94 Rue Des Dames, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[0.722217,45.192053]},"properties":{"id":"fr/dordogne:4f2bbb2bb728d3fa","gid":"openaddresses:address:fr/dordogne:4f2bbb2bb728d3fa","layer":"address","source":"openaddresses","source_id":"fr/dordogne:4f2bbb2bb728d3fa","name":"94 Rue Combe Des Dames","housenumber":"94","street":"Rue Combe Des Dames","postalcode":"24000","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"New Aquitaine","macroregion_gid":"whosonfirst:macroregion:1108826385","region":"Dordogne","region_gid":"whosonfirst:region:85683331","macrocounty":"Perigueux","macrocounty_gid":"whosonfirst:macrocounty:404228049","county":"Perigueux","county_gid":"whosonfirst:county:102072189","locality":"Perigord","locality_gid":"whosonfirst:locality:101830685","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"94 Rue Combe Des Dames, Perigord, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[3.083173,50.378825]},"properties":{"id":"fr/nord:73abc1e87971b642","gid":"openaddresses:address:fr/nord:73abc1e87971b642","layer":"address","source":"openaddresses","source_id":"fr/nord:73abc1e87971b642","name":"94 Rue De La Tour Des Dames","housenumber":"94","street":"Rue De La Tour Des Dames","postalcode":"59500","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Upper France","macroregion_gid":"whosonfirst:macroregion:1108826399","region":"Nord","region_gid":"whosonfirst:region:85683445","macrocounty":"Douai","macrocounty_gid":"whosonfirst:macrocounty:404228125","county":"Douai","county_gid":"whosonfirst:county:102071911","locality":"Douai","locality_gid":"whosonfirst:locality:101840557","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"94 Rue De La Tour Des Dames, Douai, France"}}],"bbox":[0.722217,45.192053,3.083173,50.378825]}

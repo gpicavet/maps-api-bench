@@ -1,0 +1,25 @@
+GET /v1/search?text=7%20Rue%20de%20l%27Isly%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:38:37 GMT
+content-type: application/json; charset=utf-8
+content-length: 1484
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"5cc-jr2lE0jq6JI9q4cOncaF3HLoPHE"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 49
+x-ratelimit-used-second: 1
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"7 Rue de l'Isly, Paris","size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true},"querySize":20,"parser":"libpostal","parsed_text":{"number":"7","street":"rue de l'isly","city":"paris"}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533044317995},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.325734,48.874742]},"properties":{"id":"fr/paris:5921a3fda30a29bc","gid":"openaddresses:address:fr/paris:5921a3fda30a29bc","layer":"address","source":"openaddresses","source_id":"fr/paris:5921a3fda30a29bc","name":"7 Rue De L'isly","housenumber":"7","street":"Rue De L'isly","postalcode":"75008","confidence":1,"match_type":"exact","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"8th Arrondissement","borough_gid":"whosonfirst:borough:1158894247","neighbourhood":"Madeleine","neighbourhood_gid":"whosonfirst:neighbourhood:1158894579","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"7 Rue De L'isly, Paris, France"}}],"bbox":[2.325734,48.874742,2.325734,48.874742]}

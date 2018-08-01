@@ -1,0 +1,25 @@
+GET /v1/search?text=31%20Rue%20Guillaume%20Tell%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:38:44 GMT
+content-type: application/json; charset=utf-8
+content-length: 1524
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"5f4-bP+ZLEo3IyFKKt61LNan1Fh+p28"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 48
+x-ratelimit-used-second: 2
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"31 Rue Guillaume Tell, Paris","size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true},"querySize":20,"parser":"libpostal","parsed_text":{"number":"31","street":"rue guillaume tell","city":"paris"}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533044324418},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.295181,48.884843]},"properties":{"id":"fr/paris:5469b08e8da62dd1","gid":"openaddresses:address:fr/paris:5469b08e8da62dd1","layer":"address","source":"openaddresses","source_id":"fr/paris:5469b08e8da62dd1","name":"31 Rue Guillaume Tell","housenumber":"31","street":"Rue Guillaume Tell","postalcode":"75017","confidence":1,"match_type":"exact","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"17th Arrondissement","borough_gid":"whosonfirst:borough:1158894267","neighbourhood":"Plaine de Monceaux","neighbourhood_gid":"whosonfirst:neighbourhood:1158894563","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"31 Rue Guillaume Tell, Paris, France"}}],"bbox":[2.295181,48.884843,2.295181,48.884843]}

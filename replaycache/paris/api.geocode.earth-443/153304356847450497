@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=60%20rue%20Didot%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:26:08 GMT
+content-type: application/json; charset=utf-8
+content-length: 3387
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"d3b-FOvkdQ2d/Os7SgqjijE9gI5tuOI"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 48
+x-ratelimit-used-second: 2
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"60 rue Didot, Paris","parser":"addressit","parsed_text":{"name":"60 rue Didot","regions":["60 rue Didot","Paris"],"admin_parts":"Paris"},"tokens":["60","rue","Didot"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043568422},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.317737,48.829601]},"properties":{"id":"fr/paris:b81a3521ebc1b3e4","gid":"openaddresses:address:fr/paris:b81a3521ebc1b3e4","layer":"address","source":"openaddresses","source_id":"fr/paris:b81a3521ebc1b3e4","name":"60 Rue Didot","housenumber":"60","street":"Rue Didot","postalcode":"75014","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"14th Arrondissement","borough_gid":"whosonfirst:borough:1158894259","neighbourhood":"Plaisance","neighbourhood_gid":"whosonfirst:neighbourhood:1158894535","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"60 Rue Didot, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.469603,48.588541]},"properties":{"id":"way:63592198","gid":"openstreetmap:address:way:63592198","layer":"address","source":"openstreetmap","source_id":"way:63592198","name":"60 Rue Didot Saint-Leger","housenumber":"60","street":"Rue Didot Saint-Leger","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Essonne","region_gid":"whosonfirst:region:85683371","macrocounty":"Evry","macrocounty_gid":"whosonfirst:macrocounty:404227995","county":"Corbeil-Essonnes","county_gid":"whosonfirst:county:102072075","locality":"Corbeil-Essonnes","locality_gid":"whosonfirst:locality:101749633","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"60 Rue Didot Saint-Leger, Corbeil-Essonnes, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.469691,48.588577]},"properties":{"id":"fr/essonne:dc39a3c718cb1058","gid":"openaddresses:address:fr/essonne:dc39a3c718cb1058","layer":"address","source":"openaddresses","source_id":"fr/essonne:dc39a3c718cb1058","name":"60 Rue Didot Saint-léger","housenumber":"60","street":"Rue Didot Saint-léger","postalcode":"91100","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Essonne","region_gid":"whosonfirst:region:85683371","macrocounty":"Evry","macrocounty_gid":"whosonfirst:macrocounty:404227995","county":"Corbeil-Essonnes","county_gid":"whosonfirst:county:102072075","locality":"Corbeil-Essonnes","locality_gid":"whosonfirst:locality:101749633","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"60 Rue Didot Saint-léger, Corbeil-Essonnes, France"}}],"bbox":[2.317737,48.588541,2.469691,48.829601]}

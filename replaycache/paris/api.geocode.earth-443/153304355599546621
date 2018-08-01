@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=90%20quai%20de%20Jemmapes%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:25:55 GMT
+content-type: application/json; charset=utf-8
+content-length: 1548
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"60c-Sr1zmDmlk3nsK1AV1UFtwo552Pg"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 45
+x-ratelimit-used-second: 5
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"90 quai de Jemmapes, Paris","parser":"addressit","parsed_text":{"name":"90 quai de Jemmapes","state":"DE","regions":["90 quai Jemmapes","Paris"],"admin_parts":"Paris"},"tokens":["90","quai","de","Jemmapes"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043555944},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.364632,48.872828]},"properties":{"id":"fr/paris:d886cdef3d154899","gid":"openaddresses:address:fr/paris:d886cdef3d154899","layer":"address","source":"openaddresses","source_id":"fr/paris:d886cdef3d154899","name":"90 Quai De Jemmapes","housenumber":"90","street":"Quai De Jemmapes","postalcode":"75010","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"10th Arrondissement","borough_gid":"whosonfirst:borough:1158894251","neighbourhood":"Porte-Saint-Martin","neighbourhood_gid":"whosonfirst:neighbourhood:1158894529","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"90 Quai De Jemmapes, Paris, France"}}],"bbox":[2.364632,48.872828,2.364632,48.872828]}

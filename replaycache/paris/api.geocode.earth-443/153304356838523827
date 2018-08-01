@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=43%20Rue%20des%20cinq%20Diamants%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:26:08 GMT
+content-type: application/json; charset=utf-8
+content-length: 1520
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"5f0-JVoiPBsqHxQwMZBqvLe4uCssn7g"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 49
+x-ratelimit-used-second: 1
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"43 Rue des cinq Diamants, Paris","parser":"addressit","parsed_text":{"name":"43 Rue des cinq Diamants","regions":["43 Rue des cinq Diamants","Paris"],"admin_parts":"Paris"},"tokens":["43","Rue","des","cinq","Diamants"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043568333},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.350064,48.828121]},"properties":{"id":"node:2286779111","gid":"openstreetmap:address:node:2286779111","layer":"address","source":"openstreetmap","source_id":"node:2286779111","name":"43 Rue des Cinq Diamants","housenumber":"43","street":"Rue des Cinq Diamants","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"13th Arrondissement","borough_gid":"whosonfirst:borough:1158894257","neighbourhood":"Maison-Blanche","neighbourhood_gid":"whosonfirst:neighbourhood:1158894543","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"43 Rue des Cinq Diamants, Paris, France"}}],"bbox":[2.350064,48.828121,2.350064,48.828121]}

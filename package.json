@@ -1,0 +1,19 @@
+{
+  "name": "test-maps-apis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "geolib": "^2.0.24",
+    "replay": "^2.3.0",
+    "request": "^2.87.0",
+    "string-similarity": "^1.2.0",
+    "throttled-request": "^0.1.1"
+  }
+}

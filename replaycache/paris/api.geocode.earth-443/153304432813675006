@@ -1,0 +1,25 @@
+GET /v1/search?text=22%20Rue%20de%20la%20Gait%C3%A9%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:38:48 GMT
+content-type: application/json; charset=utf-8
+content-length: 1509
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"5e5-bJw/MzCIQ3W8yggZ/9TNLfbuTfs"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 49
+x-ratelimit-used-second: 1
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"22 Rue de la Gaité, Paris","size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true},"querySize":20,"parser":"libpostal","parsed_text":{"number":"22","street":"rue de la gaité","city":"paris"}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533044328085},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.323318,48.839485]},"properties":{"id":"fr/paris:511eac2e39d6ca09","gid":"openaddresses:address:fr/paris:511eac2e39d6ca09","layer":"address","source":"openaddresses","source_id":"fr/paris:511eac2e39d6ca09","name":"22 Rue De La Gaîté","housenumber":"22","street":"Rue De La Gaîté","postalcode":"75014","confidence":1,"match_type":"exact","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"14th Arrondissement","borough_gid":"whosonfirst:borough:1158894259","neighbourhood":"Montparnasse","neighbourhood_gid":"whosonfirst:neighbourhood:85873945","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"22 Rue De La Gaîté, Paris, France"}}],"bbox":[2.323318,48.839485,2.323318,48.839485]}

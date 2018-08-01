@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=73%20avenue%20Niel%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:26:04 GMT
+content-type: application/json; charset=utf-8
+content-length: 2424
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"978-feQeXoSKINmuc0py7VwIOhMldNo"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 46
+x-ratelimit-used-second: 4
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"73 avenue Niel, Paris","parser":"addressit","parsed_text":{"name":"73 avenue Niel","street":"73 avenue","regions":["Niel","Paris"],"admin_parts":"Paris"},"tokens":["73","avenue","Niel"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043564822},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.295842,48.882308]},"properties":{"id":"fr/paris:aec3c1528b49eb7e","gid":"openaddresses:address:fr/paris:aec3c1528b49eb7e","layer":"address","source":"openaddresses","source_id":"fr/paris:aec3c1528b49eb7e","name":"73 Avenue Niel","housenumber":"73","street":"Avenue Niel","postalcode":"75017","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"17th Arrondissement","borough_gid":"whosonfirst:borough:1158894267","neighbourhood":"Ternes","neighbourhood_gid":"whosonfirst:neighbourhood:1158894509","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"73 Avenue Niel, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.295947,48.882484]},"properties":{"id":"node:1963228189","gid":"openstreetmap:address:node:1963228189","layer":"address","source":"openstreetmap","source_id":"node:1963228189","name":"73 Bis Avenue Niel","housenumber":"73 Bis","street":"Avenue Niel","postalcode":"75017","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"17th Arrondissement","borough_gid":"whosonfirst:borough:1158894267","neighbourhood":"Ternes","neighbourhood_gid":"whosonfirst:neighbourhood:1158894509","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"73 Bis Avenue Niel, Paris, France"}}],"bbox":[2.295842,48.882308,2.295947,48.882484]}

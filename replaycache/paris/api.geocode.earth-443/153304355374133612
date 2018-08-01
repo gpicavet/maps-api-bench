@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=75%20Rue%20R%C3%A9aumur%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:25:53 GMT
+content-type: application/json; charset=utf-8
+content-length: 3522
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"dc2-GQbr16HkynlB8BNBebaQCLy68+g"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 47
+x-ratelimit-used-second: 3
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"75 Rue Réaumur, Paris","parser":"addressit","parsed_text":{"name":"75 Rue Réaumur","regions":["75 Rue Réaumur","Paris"],"admin_parts":"Paris"},"tokens":["75","Rue","Réaumur"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043553686},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.349223,48.866747]},"properties":{"id":"fr/paris:b08e8795ded26e22","gid":"openaddresses:address:fr/paris:b08e8795ded26e22","layer":"address","source":"openaddresses","source_id":"fr/paris:b08e8795ded26e22","name":"75 Rue Réaumur","housenumber":"75","street":"Rue Réaumur","postalcode":"75002","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"2nd Arrondissement","borough_gid":"whosonfirst:borough:1158894233","neighbourhood":"Bonne-Nouvelle","neighbourhood_gid":"whosonfirst:neighbourhood:1158894559","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"75 Rue Réaumur, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-0.823897,46.440334]},"properties":{"id":"fr/vendee:0539435cf7ffaccc","gid":"openaddresses:address:fr/vendee:0539435cf7ffaccc","layer":"address","source":"openaddresses","source_id":"fr/vendee:0539435cf7ffaccc","name":"75 Rue Ferchault De Réaumur","housenumber":"75","street":"Rue Ferchault De Réaumur","postalcode":"85200","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Pays de la Loire","macroregion_gid":"whosonfirst:macroregion:404227423","region":"Vendée","region_gid":"whosonfirst:region:85683409","macrocounty":"Fontenay-Le-Comte","macrocounty_gid":"whosonfirst:macrocounty:404227771","county":"Fontenay-Le-Comte","county_gid":"whosonfirst:county:102065479","localadmin":"Fontenay-Le-Comte","localadmin_gid":"whosonfirst:localadmin:404353879","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"75 Rue Ferchault De Réaumur, Fontenay-Le-Comte, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-0.459259,46.311249]},"properties":{"id":"fr/deux_sevres:2ccbcb6dfb9c5a39","gid":"openaddresses:address:fr/deux_sevres:2ccbcb6dfb9c5a39","layer":"address","source":"openaddresses","source_id":"fr/deux_sevres:2ccbcb6dfb9c5a39","name":"75 Rue René Antoine De Réaumur","housenumber":"75","street":"Rue René Antoine De Réaumur","postalcode":"79000","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"New Aquitaine","macroregion_gid":"whosonfirst:macroregion:1108826385","region":"Deux-Sèvres","region_gid":"whosonfirst:region:85683163","macrocounty":"Niort","macrocounty_gid":"whosonfirst:macrocounty:404227969","county":"Niort","county_gid":"whosonfirst:county:102072323","locality":"Niort","locality_gid":"whosonfirst:locality:101749515","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"75 Rue René Antoine De Réaumur, Niort, France"}}],"bbox":[-0.823897,46.311249,2.349223,48.866747]}

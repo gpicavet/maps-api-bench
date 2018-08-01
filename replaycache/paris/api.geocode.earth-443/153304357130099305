@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=223%20Rue%20Saint-Martin%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:26:11 GMT
+content-type: application/json; charset=utf-8
+content-length: 4177
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"1051-tSbhJYFQz7TvDpc8t2XJEuel8As"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 48
+x-ratelimit-used-second: 2
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"223 Rue Saint-Martin, Paris","parser":"addressit","parsed_text":{"name":"223 Rue Saint-Martin","regions":["223 Rue Saint-Martin","Paris"],"admin_parts":"Paris"},"tokens":["223","Rue","Saint-Martin"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043571251},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.352675,48.864301]},"properties":{"id":"fr/paris:09ca6bd82f7863f2","gid":"openaddresses:address:fr/paris:09ca6bd82f7863f2","layer":"address","source":"openaddresses","source_id":"fr/paris:09ca6bd82f7863f2","name":"223 Rue Saint-martin","housenumber":"223","street":"Rue Saint-martin","postalcode":"75003","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"4th Arrondissement","borough_gid":"whosonfirst:borough:1158894237","neighbourhood":"Sainte-Avoie","neighbourhood_gid":"whosonfirst:neighbourhood:1158894521","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"223 Rue Saint-martin, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.36536,48.881336]},"properties":{"id":"fr/paris:69eec141de741290","gid":"openaddresses:address:fr/paris:69eec141de741290","layer":"address","source":"openaddresses","source_id":"fr/paris:69eec141de741290","name":"223 Rue Du Faubourg Saint-martin","housenumber":"223","street":"Rue Du Faubourg Saint-martin","postalcode":"75010","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"10th Arrondissement","borough_gid":"whosonfirst:borough:1158894251","neighbourhood":"Saint-Vincent-de-Paul","neighbourhood_gid":"whosonfirst:neighbourhood:1158894551","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"223 Rue Du Faubourg Saint-martin, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.364894,49.417898]},"properties":{"id":"fr/oise:9e691f6bb0085baf","gid":"openaddresses:address:fr/oise:9e691f6bb0085baf","layer":"address","source":"openaddresses","source_id":"fr/oise:9e691f6bb0085baf","name":"223 Rue Saint-martin","housenumber":"223","street":"Rue Saint-martin","postalcode":"60600","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Upper France","macroregion_gid":"whosonfirst:macroregion:1108826399","region":"Oise","region_gid":"whosonfirst:region:85683289","macrocounty":"Clermont","macrocounty_gid":"whosonfirst:macrocounty:404227929","county":"Clermont","county_gid":"whosonfirst:county:102065713","localadmin":"Etouy","localadmin_gid":"whosonfirst:localadmin:404417697","locality":"Étouy","locality_gid":"whosonfirst:locality:101902675","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"223 Rue Saint-martin, Étouy, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-74.092788,45.460492]},"properties":{"id":"node:1074428281","gid":"openstreetmap:address:node:1074428281","layer":"address","source":"openstreetmap","source_id":"node:1074428281","name":"223 Rue Saint-Martin","housenumber":"223","street":"Rue Saint-Martin","accuracy":"point","country":"Canada","country_gid":"whosonfirst:country:85633041","country_a":"CAN","region":"Quebec","region_gid":"whosonfirst:region:136251273","region_a":"QC","continent":"North America","continent_gid":"whosonfirst:continent:102191575","label":"223 Rue Saint-Martin, QC, Canada"}}],"bbox":[-74.092788,45.460492,2.36536,49.417898]}

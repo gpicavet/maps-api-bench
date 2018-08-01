@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=2%20rue%20Maleville%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:26:07 GMT
+content-type: application/json; charset=utf-8
+content-length: 2573
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"a0d-hbcJMDyFtNOTlkCLgIu6Mbg1a5I"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 47
+x-ratelimit-used-second: 3
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"2 rue Maleville, Paris","parser":"addressit","parsed_text":{"name":"2 rue Maleville","regions":["2 rue Maleville","Paris"],"admin_parts":"Paris"},"tokens":["2","rue","Maleville"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043567598},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.314653,48.877448]},"properties":{"id":"fr/paris:f405e88948c01585","gid":"openaddresses:address:fr/paris:f405e88948c01585","layer":"address","source":"openaddresses","source_id":"fr/paris:f405e88948c01585","name":"2 Rue Maleville","housenumber":"2","street":"Rue Maleville","postalcode":"75008","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"8th Arrondissement","borough_gid":"whosonfirst:borough:1158894247","neighbourhood":"Europe","neighbourhood_gid":"whosonfirst:neighbourhood:85873849","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"2 Rue Maleville, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[1.285011,45.132632]},"properties":{"id":"fr/dordogne:9665869f884bd3e9","gid":"openaddresses:address:fr/dordogne:9665869f884bd3e9","layer":"address","source":"openaddresses","source_id":"fr/dordogne:9665869f884bd3e9","name":"2 Rue Maleville","housenumber":"2","street":"Rue Maleville","postalcode":"24120","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"New Aquitaine","macroregion_gid":"whosonfirst:macroregion:1108826385","region":"Dordogne","region_gid":"whosonfirst:region:85683331","macrocounty":"Sarlat-La-Caneda","macrocounty_gid":"whosonfirst:macrocounty:404228213","county":"Terrasson-Lavilledieu","county_gid":"whosonfirst:county:102070999","localadmin":"Terrasson-Lavilledieu","localadmin_gid":"whosonfirst:localadmin:404349059","locality":"Terrasson-Lavilledieu","locality_gid":"whosonfirst:locality:101830697","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"2 Rue Maleville, Terrasson-Lavilledieu, France"}}],"bbox":[1.285011,45.132632,2.314653,48.877448]}

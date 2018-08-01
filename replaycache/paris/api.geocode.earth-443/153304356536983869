@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=40%20rue%20Notre-Dame%20des%20Victoires%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:26:05 GMT
+content-type: application/json; charset=utf-8
+content-length: 1609
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"649-w64jRSxe1NKjzcigEjk+w9Qp638"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 48
+x-ratelimit-used-second: 2
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"40 rue Notre-Dame des Victoires, Paris","parser":"addressit","parsed_text":{"name":"40 rue Notre-Dame des Victoires","regions":["40 rue Notre-Dame des Victoires","Paris"],"admin_parts":"Paris"},"tokens":["40","rue","Notre-Dame","des","Victoires"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043565317},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.342135,48.868876]},"properties":{"id":"fr/paris:cb9b0ed72421a26f","gid":"openaddresses:address:fr/paris:cb9b0ed72421a26f","layer":"address","source":"openaddresses","source_id":"fr/paris:cb9b0ed72421a26f","name":"40 Rue Notre-dame Des Victoires","housenumber":"40","street":"Rue Notre-dame Des Victoires","postalcode":"75002","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"2nd Arrondissement","borough_gid":"whosonfirst:borough:1158894233","neighbourhood":"Mail","neighbourhood_gid":"whosonfirst:neighbourhood:1158894547","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"40 Rue Notre-dame Des Victoires, Paris, France"}}],"bbox":[2.342135,48.868876,2.342135,48.868876]}

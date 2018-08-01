@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=101%20rue%20du%20Charonne%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:25:58 GMT
+content-type: application/json; charset=utf-8
+content-length: 523
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"20b-8mZBxHMNnyGRxbi8vTj47V+UZlw"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 46
+x-ratelimit-used-second: 4
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"101 rue du Charonne, Paris","parser":"addressit","parsed_text":{"name":"101 rue du Charonne","regions":["101 rue du Charonne","Paris"],"admin_parts":"Paris"},"tokens":["101","rue","du","Charonne"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043558689},"type":"FeatureCollection","features":[]}

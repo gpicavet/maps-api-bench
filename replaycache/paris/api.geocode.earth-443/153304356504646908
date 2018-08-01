@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=29%20rue%20Vineuse%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:26:04 GMT
+content-type: application/json; charset=utf-8
+content-length: 3432
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"d68-3BNSsNFh2prb3wrgw1trqiVD1xA"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 45
+x-ratelimit-used-second: 5
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"29 rue Vineuse, Paris","parser":"addressit","parsed_text":{"name":"29 rue Vineuse","regions":["29 rue Vineuse","Paris"],"admin_parts":"Paris"},"tokens":["29","rue","Vineuse"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043564994},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.284402,48.860251]},"properties":{"id":"fr/paris:9653ab203658eda7","gid":"openaddresses:address:fr/paris:9653ab203658eda7","layer":"address","source":"openaddresses","source_id":"fr/paris:9653ab203658eda7","name":"29 Rue Vineuse","housenumber":"29","street":"Rue Vineuse","postalcode":"75116","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"16th Arrondissement","borough_gid":"whosonfirst:borough:1158894265","neighbourhood":"Muette","neighbourhood_gid":"whosonfirst:neighbourhood:420782759","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"29 Rue Vineuse, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.284402,48.860251]},"properties":{"id":"fr/paris:e7ce9f1a868885be","gid":"openaddresses:address:fr/paris:e7ce9f1a868885be","layer":"address","source":"openaddresses","source_id":"fr/paris:e7ce9f1a868885be","name":"29 Rue Vineuse","housenumber":"29","street":"Rue Vineuse","postalcode":"75016","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"16th Arrondissement","borough_gid":"whosonfirst:borough:1158894265","neighbourhood":"Muette","neighbourhood_gid":"whosonfirst:neighbourhood:420782759","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"29 Rue Vineuse, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-0.12206,44.77889]},"properties":{"id":"fr/gironde:1d440fc0a3a66c85","gid":"openaddresses:address:fr/gironde:1d440fc0a3a66c85","layer":"address","source":"openaddresses","source_id":"fr/gironde:1d440fc0a3a66c85","name":"29 Rue Vineuse","housenumber":"29","street":"Rue Vineuse","postalcode":"33420","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"New Aquitaine","macroregion_gid":"whosonfirst:macroregion:1108826385","region":"Gironde","region_gid":"whosonfirst:region:85683243","macrocounty":"Libourne","macrocounty_gid":"whosonfirst:macrocounty:404228275","county":"Pujols","county_gid":"whosonfirst:county:102070819","localadmin":"Rauzan","localadmin_gid":"whosonfirst:localadmin:404420785","locality":"Rauzan","locality_gid":"whosonfirst:locality:101896387","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"29 Rue Vineuse, Rauzan, France"}}],"bbox":[-0.12206,44.77889,2.284402,48.860251]}

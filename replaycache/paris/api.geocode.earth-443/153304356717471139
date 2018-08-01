@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=15%20rue%20d%27Aboukir%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:26:07 GMT
+content-type: application/json; charset=utf-8
+content-length: 3496
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"da8-hKVvs4kD4Q/oxyjZfTKyDZnyexc"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 49
+x-ratelimit-used-second: 1
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"15 rue d'Aboukir, Paris","parser":"addressit","parsed_text":{"name":"15 rue d'Aboukir","regions":["15 rue d'Aboukir","Paris"],"admin_parts":"Paris"},"tokens":["15","rue","d'Aboukir"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043567122},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.342908,48.866458]},"properties":{"id":"fr/paris:e0d6462072ac18d0","gid":"openaddresses:address:fr/paris:e0d6462072ac18d0","layer":"address","source":"openaddresses","source_id":"fr/paris:e0d6462072ac18d0","name":"15 Rue D'aboukir","housenumber":"15","street":"Rue D'aboukir","postalcode":"75002","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"2nd Arrondissement","borough_gid":"whosonfirst:borough:1158894233","neighbourhood":"Mail","neighbourhood_gid":"whosonfirst:neighbourhood:1158894547","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"15 Rue D'aboukir, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[1.465535,43.60425]},"properties":{"id":"fr/haute_garonne:d93c6b3d3e36d090","gid":"openaddresses:address:fr/haute_garonne:d93c6b3d3e36d090","layer":"address","source":"openaddresses","source_id":"fr/haute_garonne:d93c6b3d3e36d090","name":"15 Rue D'aboukir","housenumber":"15","street":"Rue D'aboukir","postalcode":"31500","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Occitania","macroregion_gid":"whosonfirst:macroregion:1108826387","region":"Haute-Garonne","region_gid":"whosonfirst:region:85683397","macrocounty":"Toulouse","macrocounty_gid":"whosonfirst:macrocounty:404228067","county":"Toulouse","county_gid":"whosonfirst:county:102072513","locality":"Toulouse","locality_gid":"whosonfirst:locality:101750691","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"15 Rue D'aboukir, Toulouse, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[3.271074,49.845677]},"properties":{"id":"fr/aisne:0954a2167d109ebc","gid":"openaddresses:address:fr/aisne:0954a2167d109ebc","layer":"address","source":"openaddresses","source_id":"fr/aisne:0954a2167d109ebc","name":"15 Rue D'aboukir","housenumber":"15","street":"Rue D'aboukir","postalcode":"02100","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Upper France","macroregion_gid":"whosonfirst:macroregion:1108826399","region":"Aisne","region_gid":"whosonfirst:region:85683247","macrocounty":"Saint-Quentin","macrocounty_gid":"whosonfirst:macrocounty:404228009","county":"Saint-Quentin","county_gid":"whosonfirst:county:102072337","localadmin":"Saint-Quentin","localadmin_gid":"whosonfirst:localadmin:404410819","locality":"Saint-Quentin","locality_gid":"whosonfirst:locality:101751423","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"15 Rue D'aboukir, Saint-Quentin, France"}}],"bbox":[1.465535,43.60425,3.271074,49.845677]}

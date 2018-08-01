@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=18%20Rue%20Ordener%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:13:28 GMT
+content-type: application/json; charset=utf-8
+content-length: 2487
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"9b7-TR1L8E+DZicfgOp+VrBHLlMAFkc"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 49
+x-ratelimit-used-second: 1
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"18 Rue Ordener, Paris","parser":"addressit","parsed_text":{"name":"18 Rue Ordener","regions":["18 Rue Ordener","Paris"],"admin_parts":"Paris"},"tokens":["18","Rue","Ordener"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533042808735},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.416922,48.653457]},"properties":{"id":"fr/essonne:5268f034821547b0","gid":"openaddresses:address:fr/essonne:5268f034821547b0","layer":"address","source":"openaddresses","source_id":"fr/essonne:5268f034821547b0","name":"18 Rue Ordener","housenumber":"18","street":"Rue Ordener","postalcode":"91130","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Essonne","region_gid":"whosonfirst:region:85683371","macrocounty":"Evry","macrocounty_gid":"whosonfirst:macrocounty:404227995","county":"Ris-Orangis","county_gid":"whosonfirst:county:102068625","locality":"Ris-Orangis","locality_gid":"whosonfirst:locality:101751009","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"18 Rue Ordener, Ris-Orangis, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[2.492439,48.94359]},"properties":{"id":"fr/seine_saint_denis:cc70911a2b2c7a50","gid":"openaddresses:address:fr/seine_saint_denis:cc70911a2b2c7a50","layer":"address","source":"openaddresses","source_id":"fr/seine_saint_denis:cc70911a2b2c7a50","name":"18 Rue Ordener","housenumber":"18","street":"Rue Ordener","postalcode":"93600","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Seine-Saint-Denis","region_gid":"whosonfirst:region:85683475","macrocounty":"Le Raincy","macrocounty_gid":"whosonfirst:macrocounty:404227999","county":"Aulnay-Sous-Bois","county_gid":"whosonfirst:county:102071967","locality":"Aulnay-sous-Bois","locality_gid":"whosonfirst:locality:101749073","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"18 Rue Ordener, Aulnay-sous-Bois, France"}}],"bbox":[2.416922,48.653457,2.492439,48.94359]}

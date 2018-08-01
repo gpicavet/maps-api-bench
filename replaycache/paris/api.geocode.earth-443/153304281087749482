@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=15%20Avenue%20de%20Saint-Ouen%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:13:30 GMT
+content-type: application/json; charset=utf-8
+content-length: 2650
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"a5a-FqiNzx1O5grzNFexTCoBDjEPZ30"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 47
+x-ratelimit-used-second: 3
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"15 Avenue de Saint-Ouen, Paris","parser":"addressit","parsed_text":{"name":"15 Avenue de Saint-Ouen","street":"15 Avenue","state":"DE","regions":["Saint-Ouen","Paris"],"admin_parts":"Paris"},"tokens":["15","Avenue","de","Saint-Ouen"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533042810826},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.325864,48.888462]},"properties":{"id":"fr/paris:383a3a41be692b44","gid":"openaddresses:address:fr/paris:383a3a41be692b44","layer":"address","source":"openaddresses","source_id":"fr/paris:383a3a41be692b44","name":"15 Avenue De Saint-ouen","housenumber":"15","street":"Avenue De Saint-ouen","postalcode":"75017","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"17th Arrondissement","borough_gid":"whosonfirst:borough:1158894267","neighbourhood":"Epinettes","neighbourhood_gid":"whosonfirst:neighbourhood:85873987","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"15 Avenue De Saint-ouen, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[-1.602311,47.254872]},"properties":{"id":"fr/loire_atlantique:a6fcce46f41b5963","gid":"openaddresses:address:fr/loire_atlantique:a6fcce46f41b5963","layer":"address","source":"openaddresses","source_id":"fr/loire_atlantique:a6fcce46f41b5963","name":"15 Avenue De Saint-ouen","housenumber":"15","street":"Avenue De Saint-ouen","postalcode":"44700","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Pays de la Loire","macroregion_gid":"whosonfirst:macroregion:404227423","region":"Loire-Atlantique","region_gid":"whosonfirst:region:85683233","macrocounty":"Nantes","macrocounty_gid":"whosonfirst:macrocounty:404227893","county":"Orvault","county_gid":"whosonfirst:county:102071671","localadmin":"Orvault","localadmin_gid":"whosonfirst:localadmin:404397113","locality":"Orvault","locality_gid":"whosonfirst:locality:101750929","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"15 Avenue De Saint-ouen, Orvault, France"}}],"bbox":[-1.602311,47.254872,2.325864,48.888462]}

@@ -1,0 +1,25 @@
+GET /v1/search?text=223%20Rue%20Saint-Martin%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:38:59 GMT
+content-type: application/json; charset=utf-8
+content-length: 1512
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"5e8-yhedL3GJ6+nl99CubXOx6ouWfhY"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 45
+x-ratelimit-used-second: 5
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"223 Rue Saint-Martin, Paris","size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true},"querySize":20,"parser":"libpostal","parsed_text":{"number":"223","street":"rue saint-martin","city":"paris"}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533044339870},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.352675,48.864301]},"properties":{"id":"fr/paris:09ca6bd82f7863f2","gid":"openaddresses:address:fr/paris:09ca6bd82f7863f2","layer":"address","source":"openaddresses","source_id":"fr/paris:09ca6bd82f7863f2","name":"223 Rue Saint-martin","housenumber":"223","street":"Rue Saint-martin","postalcode":"75003","confidence":1,"match_type":"exact","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"4th Arrondissement","borough_gid":"whosonfirst:borough:1158894237","neighbourhood":"Sainte-Avoie","neighbourhood_gid":"whosonfirst:neighbourhood:1158894521","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"223 Rue Saint-martin, Paris, France"}}],"bbox":[2.352675,48.864301,2.352675,48.864301]}

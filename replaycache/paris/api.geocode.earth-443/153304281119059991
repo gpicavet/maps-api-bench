@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=51%20Avenue%20du%20Dr%20Arnold%20Netter%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:13:31 GMT
+content-type: application/json; charset=utf-8
+content-length: 589
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"24d-iJcE5ZxaRu3kn5CePa7+Qloxz1E"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 49
+x-ratelimit-used-second: 1
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"51 Avenue du Dr Arnold Netter, Paris","parser":"addressit","parsed_text":{"name":"51 Avenue du Dr Arnold Netter","number":"51","street":"Avenue du Dr","regions":["Arnold Netter","Paris"],"admin_parts":"Paris"},"tokens":["51","Avenue","du","Dr","Arnold","Netter"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533042811141},"type":"FeatureCollection","features":[]}

@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=42%20Rue%20Mazarine%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:26:06 GMT
+content-type: application/json; charset=utf-8
+content-length: 1488
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"5d0-NqdMpOp7L+FUaoMylHIyzD580n4"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 46
+x-ratelimit-used-second: 4
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"42 Rue Mazarine, Paris","parser":"addressit","parsed_text":{"name":"42 Rue Mazarine","regions":["42 Rue Mazarine","Paris"],"admin_parts":"Paris"},"tokens":["42","Rue","Mazarine"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043566694},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.337653,48.8554]},"properties":{"id":"fr/paris:c31e6d08b9949134","gid":"openaddresses:address:fr/paris:c31e6d08b9949134","layer":"address","source":"openaddresses","source_id":"fr/paris:c31e6d08b9949134","name":"42 Rue Mazarine","housenumber":"42","street":"Rue Mazarine","postalcode":"75006","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"6th Arrondissement","borough_gid":"whosonfirst:borough:1158894241","neighbourhood":"Monnaie","neighbourhood_gid":"whosonfirst:neighbourhood:85873825","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"42 Rue Mazarine, Paris, France"}}],"bbox":[2.337653,48.8554,2.337653,48.8554]}

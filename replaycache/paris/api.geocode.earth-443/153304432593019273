@@ -1,0 +1,25 @@
+GET /v1/search?text=22%20rue%20de%20Ponthieu%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:38:45 GMT
+content-type: application/json; charset=utf-8
+content-length: 1507
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"5e3-xGDHBYFqIQKla7W0yNCsqOaxR50"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 47
+x-ratelimit-used-second: 3
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"22 rue de Ponthieu, Paris","size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true},"querySize":20,"parser":"libpostal","parsed_text":{"number":"22","street":"rue de ponthieu","city":"paris"}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533044325787},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.309547,48.870758]},"properties":{"id":"fr/paris:a72bd3ceadff88c4","gid":"openaddresses:address:fr/paris:a72bd3ceadff88c4","layer":"address","source":"openaddresses","source_id":"fr/paris:a72bd3ceadff88c4","name":"22 Rue De Ponthieu","housenumber":"22","street":"Rue De Ponthieu","postalcode":"75008","confidence":1,"match_type":"exact","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"8th Arrondissement","borough_gid":"whosonfirst:borough:1158894247","neighbourhood":"Faubourg-du-Roule","neighbourhood_gid":"whosonfirst:neighbourhood:1158894577","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"22 Rue De Ponthieu, Paris, France"}}],"bbox":[2.309547,48.870758,2.309547,48.870758]}

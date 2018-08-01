@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=17%20Rue%20des%20Messageries%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:24:20 GMT
+content-type: application/json; charset=utf-8
+content-length: 2568
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"a08-9LIsNW+XHUSDcJcr6k3voCv6j2k"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 48
+x-ratelimit-used-second: 2
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"17 Rue des Messageries, Paris","parser":"addressit","parsed_text":{"name":"17 Rue des Messageries","regions":["17 Rue des Messageries","Paris"],"admin_parts":"Paris"},"tokens":["17","Rue","des","Messageries"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533043460480},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.349459,48.87634]},"properties":{"id":"fr/paris:e4af44df6788285a","gid":"openaddresses:address:fr/paris:e4af44df6788285a","layer":"address","source":"openaddresses","source_id":"fr/paris:e4af44df6788285a","name":"17 Rue Des Messageries","housenumber":"17","street":"Rue Des Messageries","postalcode":"75010","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"10th Arrondissement","borough_gid":"whosonfirst:borough:1158894251","neighbourhood":"Porte-Saint-Denis","neighbourhood_gid":"whosonfirst:neighbourhood:85873883","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"17 Rue Des Messageries, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[6.181892,49.101496]},"properties":{"id":"fr/moselle:f1b5da33fee52ce7","gid":"openaddresses:address:fr/moselle:f1b5da33fee52ce7","layer":"address","source":"openaddresses","source_id":"fr/moselle:f1b5da33fee52ce7","name":"17 Rue Des Messageries","housenumber":"17","street":"Rue Des Messageries","postalcode":"57000","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Great East","macroregion_gid":"whosonfirst:macroregion:1108826391","region":"Moselle","region_gid":"whosonfirst:region:85683271","macrocounty":"Metz","macrocounty_gid":"whosonfirst:macrocounty:404228319","county":"Metz","county_gid":"whosonfirst:county:102072579","localadmin":"Metz","localadmin_gid":"whosonfirst:localadmin:404367463","locality":"Metz","locality_gid":"whosonfirst:locality:101750105","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"17 Rue Des Messageries, Metz, France"}}],"bbox":[2.349459,48.87634,6.181892,49.101496]}

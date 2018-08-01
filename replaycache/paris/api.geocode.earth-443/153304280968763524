@@ -1,0 +1,25 @@
+GET /v1/autocomplete?text=8%20Place%20Sainte-Opportune%2C%20Paris&api_key=ge-a4bd96167b5d925f
+host: api.geocode.earth
+accept: application/json
+
+HTTP/1.1 200 OK
+server: nginx/1.13.7
+date: Tue, 31 Jul 2018 13:13:29 GMT
+content-type: application/json; charset=utf-8
+content-length: 2558
+connection: close
+vary: Accept-Encoding, Origin
+access-control-allow-headers: X-Requested-With,content-type
+access-control-allow-methods: GET, OPTIONS
+access-control-allow-origin: *
+cache-control: public
+charset: utf8
+etag: W/"9fe-uXS4Hhg7GXGQ1xjacm2SVcBAPO8"
+x-powered-by: pelias
+x-ratelimit-delay-second: 1
+x-ratelimit-limit-second: 50
+x-ratelimit-remaining-second: 48
+x-ratelimit-used-second: 2
+strict-transport-security: max-age=15724800; includeSubDomains;
+
+{"geocoding":{"version":"0.2","attribution":"https://geocode.earth/guidelines","query":{"text":"8 Place Sainte-Opportune, Paris","parser":"addressit","parsed_text":{"name":"8 Place Sainte-Opportune","street":"8 Place","regions":["Sainte-Opportune","Paris"],"admin_parts":"Paris"},"tokens":["8","Place","Sainte-Opportune"],"size":10,"private":false,"lang":{"name":"English","iso6391":"en","iso6393":"eng","defaulted":true}},"engine":{"name":"Pelias","author":"Mapzen","version":"1.0"},"timestamp":1533042809631},"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Point","coordinates":[2.347424,48.859651]},"properties":{"id":"fr/paris:ae2a40e213044c88","gid":"openaddresses:address:fr/paris:ae2a40e213044c88","layer":"address","source":"openaddresses","source_id":"fr/paris:ae2a40e213044c88","name":"8 Place Sainte-opportune","housenumber":"8","street":"Place Sainte-opportune","postalcode":"75001","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Ile-of-France","macroregion_gid":"whosonfirst:macroregion:404227465","region":"Paris","region_gid":"whosonfirst:region:85683497","locality":"Paris","locality_gid":"whosonfirst:locality:101751119","borough":"1st Arrondissement","borough_gid":"whosonfirst:borough:1158894231","neighbourhood":"Les Halles","neighbourhood_gid":"whosonfirst:neighbourhood:85873785","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"8 Place Sainte-opportune, Paris, France"}},{"type":"Feature","geometry":{"type":"Point","coordinates":[1.389852,48.909441]},"properties":{"id":"fr/eure:e560582bb53b491c","gid":"openaddresses:address:fr/eure:e560582bb53b491c","layer":"address","source":"openaddresses","source_id":"fr/eure:e560582bb53b491c","name":"8 Place Sainte-opportune","housenumber":"8","street":"Place Sainte-opportune","postalcode":"27750","accuracy":"point","country":"France","country_gid":"whosonfirst:country:85633147","country_a":"FRA","macroregion":"Normandy","macroregion_gid":"whosonfirst:macroregion:1108826393","region":"Eure","region_gid":"whosonfirst:region:85683283","macrocounty":"Evreux","macrocounty_gid":"whosonfirst:macrocounty:404228055","county":"Saint-Andre-De-L'Eure","county_gid":"whosonfirst:county:102070173","localadmin":"La Couture-Boussey","localadmin_gid":"whosonfirst:localadmin:404381175","continent":"Europe","continent_gid":"whosonfirst:continent:102191581","label":"8 Place Sainte-opportune, La Couture-Boussey, France"}}],"bbox":[1.389852,48.859651,2.347424,48.909441]}
