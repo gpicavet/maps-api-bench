@@ -1,74 +1,21 @@
 
-const Promise = require('bluebird');
-const request = require("request");
 const fs = require('fs');
+
+const Promise = require('bluebird');
+
 const replay = require('replay');//creates a proxy http api to record/replay
 const geolib = require('geolib');
 const stringsim = require('string-similarity');
 
+const GeocodeEarth = require('./api/geocodeEarth.js');
 
 const fsp = Promise.promisifyAll(fs);
-const requestp = Promise.promisify(request);
-const requestpp = Promise.promisifyAll(requestp);
 
-function autocomplete(text) {
-    return requestpp.getAsync('https://api.geocode.earth/v1/autocomplete', 
-        {
-            qs:{
-                text:text,
-                api_key:api_key
-            }, 
-            json:true
-        }).then(
-            (resp)=> {
-                if(resp.body.features && resp.body.features[0])
-                    return resp.body.features[0];
-                else
-                    return null;
 
-        });
-}
+const args = process.argv.slice(2);
+const [inputCsv, replaycacheDir, replayMode, api_key] = args;
 
-function search(text) {
-    return requestpp.getAsync('https://api.geocode.earth/v1/search', 
-        {
-            qs:{
-                text:text,
-                api_key:api_key
-            }, 
-            json:true
-        }).then(
-            (resp)=> {
-                if(resp.body.features && resp.body.features[0])
-                    return resp.body.features[0];
-                else
-                    return null;
-
-        });
-}
-
-function reverse({lon,lat}) {
-    return requestpp.getAsync('https://api.geocode.earth/v1/reverse', 
-        {
-            qs:{
-                'point.lon':lon,
-                'point.lat':lat,
-                layers:'address',
-                api_key:api_key
-            }, 
-            json:true
-        }).then(
-            (resp)=> {
-                if(resp.body.features && resp.body.features[0])
-                    return resp.body.features[0];
-                else
-                    return null;
-
-        });
-}
-
-let args = process.argv.slice(2);
-let [inputCsv, replaycacheDir, replayMode, api_key] = args;
+const api = new GeocodeEarth(api_key);
 
 replay.fixtures = replaycacheDir;
 replay.mode = replayMode;
@@ -120,7 +67,7 @@ fsp.readFileAsync(inputCsv, 'utf8').then((data) => {
                 }
             });
             */
-           return reverse(loc).then(json => {
+           return api.reverse(loc).then(json => {
             if(json !== null && json.properties) {
                 let stringRes = (json.properties.name+', '+json.properties.locality).toLowerCase();
                 let stringRef = loc.addr.toLowerCase();
