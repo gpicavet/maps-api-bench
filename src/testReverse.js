@@ -1,81 +1,107 @@
-
-const fs = require('fs');
-
 const Promise = require('bluebird');
-
 const replay = require('replay');//creates a proxy http api to record/replay
 const geolib = require('geolib');
+const csv = require('csvdata');
 const stringsim = require('string-similarity');
 
-const GeocodeEarth = require('./api/geocodeEarth.js');
+const {GeocodeEarth} = require('./api/geocodeEarth.js');
 
-const fsp = Promise.promisifyAll(fs);
-
+////////////////////////////////////////////////
 
 const args = process.argv.slice(2);
 const [inputCsv, replaycacheDir, replayMode, api_key] = args;
 
 const api = new GeocodeEarth(api_key);
 
-replay.fixtures = replaycacheDir;
-replay.mode = replayMode;
+replay.fixtures =  replaycacheDir;
+replay.mode = replayMode;//record|replay
 
-fsp.readFileAsync(inputCsv, 'utf8').then((data) => {
+let table=[];
+csv.load(inputCsv, {delimiter: ';', parse:false, stream:true})
+  .on('data', (data) => {
 
-    let headers={};
-    let addresses=data.split('\r').map((row, ind) => {
-        row = row.trim();
-        if(ind===0) {
-            row.split(';').forEach((h,i)=> {
-                headers[h]=i;
-            });
-        } else {
-            let cells = row.split(';');
-            if(cells.length === Object.keys(headers).length) {
-                let lat = parseFloat(cells[headers['gps_lat']].replace(',','.'));
-                let lon = parseFloat(cells[headers['gps_long']].replace(',','.'));
-                let addr = cells[headers['address']];
-                if(addr.match(/[1-9]+.*/) && 
-                    addr.match(/.*[a-z]+.*/) && 
-                    addr.indexOf('"')<0 && // valid street number + name
-                    lat!==0 && lon!==0 //only if geo data are present
-                    ) {
-                    
-                        addr = addr.replace(',','');
-                        addr = addr +', '+cells[headers['city']];
-                    
-                        return {addr:addr,lat:lat,lon:lon};
-                }
-            }
-            return null;
-        }
-    }).filter(locCsv=>locCsv).slice(0,100);
+    if(data.address.match(/[1-9]+.*/) && 
+        data.address.match(/.*[a-z]+.*/) && 
+        data.gps_lat!==0 && data.gps_long!==0//only if geo data are present
+    ) {                    
+        data.gps_lat = parseFloat(data.gps_lat.replace(',','.'));
+        data.gps_long = parseFloat(data.gps_long.replace(',','.'));
+        table.push({
+            street:data.address,
+            city:data.city,
+            lon:data.gps_long,
+            lat:data.gps_lat
+        });
+    }
+  })
+  .on('end', () => {
 
-    return Promise.map(addresses,
+
+    table = table.slice(0,100);
+
+    //rate limit api calls
+    Promise.map(table,
         (loc) => {
             /*
-            return search(loc.addr).then(json => {
+            let addr=loc.address.replace(',','')+', '+loc.city;
+            return api.geocode(addr).then(res => {
                 console.log("call search api", loc.addr);
-                if(json !== null && json.geometry) {
+                if(res !== null) {
                     let diff = 
                         geolib.getDistance(
-                            {longitude:json.geometry.coordinates[0], latitude:json.geometry.coordinates[1]},
-                            {longitude:loc.lon, latitude:loc.lat});
+                            {longitude:res.lon, latitude:res.lat},
+                            {longitude:loc.long, latitude:loc.lat});
                     console.log(diff + " meters diff", "coords", json.geometry.coordinates);
                 } else {
-                    console.warn('no data');
+                    console.error('no data');
                 }
             });
             */
-           return api.reverse(loc).then(json => {
-            if(json !== null && json.properties) {
-                let stringRes = (json.properties.name+', '+json.properties.locality).toLowerCase();
-                let stringRef = loc.addr.toLowerCase();
+           /*
+           return api.reverse(loc.long, loc.lat).then(res => {
+            if(res.length>0) {
+                let stringRes = (res[0].street+', '+res[0].city).toLowerCase();
+                let stringRef = (loc.address.replace(',','')+', '+loc.city).toLowerCase();
                 let dist =stringsim.compareTwoStrings(stringRes, stringRef);
                 console.log(dist+';'+loc.lon+';'+loc.lat+';'+stringRes+';'+stringRef);
             } else {
-                console.warn('no data');
+                console.error('no data');
             }
-        });           
-        }, {concurrency:2});//rate limit api
-});
+            });  
+            */
+
+            //autocomplete nearby partial address (half street name with number)
+            const addrParts = loc.street.replace(',','').split(' ');
+            const partialAddr = addrParts.slice(0,addrParts.length-1).join(' ')+' '+addrParts[addrParts.length-1].substring(0,addrParts[addrParts.length-1].length*0.5);
+            return api.autocomplete(partialAddr, 2.346319914, 48.83746719,loc.lon, loc.lat).then(res => {
+                if(res.length>0) {
+                    let stringRes = (res[0].street+', '+res[0].city).toLowerCase();
+                    let stringRef = (loc.street.replace(',','')+', '+loc.city).toLowerCase();
+                    let dist =stringsim.compareTwoStrings(stringRes, stringRef);
+                    console.log(dist+';'+loc.lon+';'+loc.lat+';'+stringRes+';'+partialAddr+';'+stringRef);    
+                } else {
+                    console.error('no data');
+                }
+            });
+            /*
+            //autocomplete nearby partial address (half street name without number or type)
+            const addrParts = loc.street.replace(',','').split(' ');
+            const partialAddr = addrParts[addrParts.length-1].substring(0,addrParts[addrParts.length-1].length*0.8);
+            return api.autocomplete(partialAddr, loc.lon, loc.lat).then(res => {
+                if(res.length>0) {
+                    let stringRes = (res[0].street+', '+res[0].city).toLowerCase();
+                    let stringRef = (loc.street.replace(',','')+', '+loc.city).toLowerCase();
+                    let dist =stringsim.compareTwoStrings(stringRes, stringRef);
+                    console.log(dist+';'+loc.lon+';'+loc.lat+';'+stringRes+';'+partialAddr+';'+stringRef);    
+                } else {
+                    console.error('no data');
+                }
+            });
+            */
+    
+            //autocomplete nearby mispelling street name
+    
+         
+        }, {concurrency:2});
+    
+  });

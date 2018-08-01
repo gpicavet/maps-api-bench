@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.1",
+    "csvdata": "^1.7.0",
     "geolib": "^2.0.24",
     "replay": "^2.3.0",
     "request": "^2.87.0",
