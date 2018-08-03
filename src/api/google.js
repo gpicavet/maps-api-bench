@@ -10,6 +10,14 @@ class Google {
         this.api_key=api_key;
     }
 
+    getAddressComp(res, type) {
+        for(let ac of res) {
+            if(ac["types"].indexOf(type)>=0)
+                return ac["long_name"];
+        }
+        return '';
+    }
+
     autocomplete(text,lon,lat) {
         return requestpp.getAsync('https://maps.googleapis.com/maps/api/place/autocomplete/json', 
             {
@@ -35,19 +43,22 @@ class Google {
     }
 
     geocode(text) {
-        return requestpp.getAsync('https://api.geocode.earth/v1/search', 
+        return requestpp.getAsync('https://maps.googleapis.com/maps/api/place/textsearch/json', 
             {
                 qs:{
-                    text:text,
-                    api_key:this.api_key
+                    query:text,
+                    language:'fr',
+                    key:this.api_key
                 }, 
                 json:true
             }).then(
                 (resp)=> {
-                    if(resp.body.features)
-                        return resp.body.features.map(f=>({
-                            lon:f.geometry.coordinates[0],
-                            lat:f.geometry.coordinates[1]}));
+                    if(resp.body.results)
+                        return resp.body.results.map(f=>({
+                            lon:f.geometry.location.lng,
+                            lat:f.geometry.location.lat,
+                            street:f.name,
+                            city:''}));
                     else
                         return [];
 
@@ -55,21 +66,20 @@ class Google {
     }
 
     reverse(lon,lat) {
-        return requestpp.getAsync('https://api.geocode.earth/v1/reverse', 
+        return requestpp.getAsync('https://maps.googleapis.com/maps/api/geocode/json', 
             {
                 qs:{
-                    'point.lon':lon,
-                    'point.lat':lat,
-                    layers:'address',
-                    api_key:this.api_key
+                    'latlng':lat+','+lon,
+                    key:this.api_key
                 }, 
                 json:true
             }).then(
                 (resp)=> {
-                    if(resp.body.features)
-                        return resp.body.features.map(f=>({
-                            street:f.properties.name,
-                            city:f.properties.locality}));
+                    if(resp.body.results)
+                        return resp.body.results.map(f=>({
+                            street:this.getAddressComp(f.address_components,'street_number')+" "+this.getAddressComp(f.address_components,'route'),
+                            city:this.getAddressComp(f.address_components,'postal_code')+" "+this.getAddressComp(f.address_components,'locality')
+                        }));
                     else
                         return [];
 
@@ -78,5 +88,5 @@ class Google {
 }
 
 module.exports = {
-    Google:Google
+    Api:Google
 }

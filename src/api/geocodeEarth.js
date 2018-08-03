@@ -23,6 +23,8 @@ class GeocodeEarth {
                 json:true
             }).then(
                 (resp)=> {
+                    if(resp.statusCode >= 300)
+                        console.error(resp.statusCode,resp.body);
                     if(resp.body.features)
                         return resp.body.features.map(f=>({
                             street:f.properties.name,
@@ -43,10 +45,14 @@ class GeocodeEarth {
                 json:true
             }).then(
                 (resp)=> {
+                    if(resp.statusCode >= 300)
+                        console.error(resp.statusCode,resp.body);
                     if(resp.body.features)
                         return resp.body.features.map(f=>({
                             lon:f.geometry.coordinates[0],
-                            lat:f.geometry.coordinates[1]}));
+                            lat:f.geometry.coordinates[1],
+                            street:f.properties.name,
+                            city:f.properties.locality}));
                     else
                         return [];
 
@@ -68,7 +74,7 @@ class GeocodeEarth {
                     if(resp.body.features)
                         return resp.body.features.map(f=>({
                             street:f.properties.name,
-                            city:f.properties.locality}));
+                            city:f.properties.postalcode+' '+f.properties.locality}));
                     else
                         return [];
 
@@ -77,5 +83,5 @@ class GeocodeEarth {
 }
 
 module.exports = {
-    GeocodeEarth:GeocodeEarth
+    Api:GeocodeEarth
 }
