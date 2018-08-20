@@ -1,19 +1,15 @@
-const path = require('path');
+
 const Promise = require('bluebird');
-const replay = require('replay');//creates a proxy http api to record/replay
 const geolib = require('geolib');
 const csv = require('csvdata');
 
 ////////////////////////////////////////////////
 
 const args = process.argv.slice(2);
-const [inputCsv, replayMode, apiProvider, api_key] = args;
+const [inputCsv, apiProvider, api_key] = args;
 
 const apiClass = require('./api/'+apiProvider+'.js').Api;
 const api = new apiClass(api_key);
-
-replay.fixtures =  path.join('replaycache',path.parse(inputCsv).name);
-replay.mode = replayMode;//record|replay
 
 let table=[];
 csv.load(inputCsv, {delimiter: ';', parse:false, stream:true})

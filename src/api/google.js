@@ -18,13 +18,12 @@ class Google {
         return '';
     }
 
-    autocomplete(text,lon,lat) {
+    autocomplete(text,lon,lat,radius) {
         return requestpp.getAsync('https://maps.googleapis.com/maps/api/place/autocomplete/json', 
             {
                 qs:{
-                    'focus.point.lon':lon,
-                    'focus.point.lat':lat,
-                    layers:'address',
+                    location:lat+','+lon,
+                    radius:radius,
                     input:text,
                     language:'fr',
                     key:this.api_key
@@ -32,6 +31,10 @@ class Google {
                 json:true
             }).then(
                 (resp)=> {
+                    if(resp.statusCode >= 300 || (resp.body && resp.body.error_message)) {
+                        console.error(resp.statusCode,resp.body);
+                        throw 'GoogleApiError';
+                    }
                     if(resp.body.predictions)
                         return resp.body.predictions.map(f=>({
                             street:f.structured_formatting.main_text,

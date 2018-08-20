@@ -10,16 +10,26 @@ class GeocodeEarth {
         this.api_key=api_key;
     }
 
-    autocomplete(text,lon,lat) {
+    autocomplete(text,lon,lat,radius) {
+        let ext={};
+        if(radius) {
+            const radiusDeg = +(radius * 0.00001).toFixed(5); //(=1 meter in degrees)
+            ext = {
+                'boundary.rect.min_lon':(+lon-radiusDeg).toFixed(6),
+                'boundary.rect.max_lon':(+lon+radiusDeg).toFixed(6),
+                'boundary.rect.min_lat':(+lat-radiusDeg).toFixed(6),
+                'boundary.rect.max_lat':(+lat+radiusDeg).toFixed(6),
+            }
+        }
         return requestpp.getAsync('https://api.geocode.earth/v1/autocomplete', 
             {
-                qs:{
-                    'focus.point.lon':lon,
-                    'focus.point.lat':lat,
+                qs:{...{
+                    'focus.point.lon':(+lon).toFixed(6),
+                    'focus.point.lat':(+lat).toFixed(6),
                     layers:'address',
                     text:text,
                     api_key:this.api_key
-                }, 
+                },...ext}, 
                 json:true
             }).then(
                 (resp)=> {

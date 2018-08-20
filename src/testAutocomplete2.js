@@ -36,9 +36,9 @@ csv.load(inputCsv, {delimiter: ';', parse:false, stream:true})
             //calculate nearby location (rounding)
             let [lon, lat, radius] = [+loc.lon.toFixed(3), +loc.lat.toFixed(3), 500/*3 decimals = 111,1 meters*/];
 
-            //autocomplete nearby partial address (half street name with number)
+            //autocomplete nearby partial address (last word)
             const addrParts = loc.street.toLowerCase().replace(',','').split(' ');
-            const partialAddr = addrParts.slice(0,addrParts.length-1).join(' ')+' '+addrParts[addrParts.length-1].substring(0,addrParts[addrParts.length-1].length*0.5);
+            const partialAddr = addrParts[addrParts.length-1];
             const outCsv = [index, (loc.street+', '+loc.postalCode+' '+loc.city).toLowerCase(), partialAddr, lon, lat];
             return api.autocomplete(partialAddr, lon, lat, radius).then(res => {
                 if(res.length>0) {
