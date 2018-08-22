@@ -13,12 +13,10 @@ class GeocodeEarth {
     autocomplete(text,lon,lat,radius) {
         let ext={};
         if(radius) {
-            const radiusDeg = +(radius * 0.00001).toFixed(5); //(=1 meter in degrees)
             ext = {
-                'boundary.rect.min_lon':(+lon-radiusDeg).toFixed(6),
-                'boundary.rect.max_lon':(+lon+radiusDeg).toFixed(6),
-                'boundary.rect.min_lat':(+lat-radiusDeg).toFixed(6),
-                'boundary.rect.max_lat':(+lat+radiusDeg).toFixed(6),
+                'boundary.circle.lon':(+lon).toFixed(6),
+                'boundary.circle.lat':(+lat).toFixed(6),
+                'boundary.circle.radius':(radius/1000).toFixed(3)
             }
         }
         return requestpp.getAsync('https://api.geocode.earth/v1/autocomplete', 
@@ -38,7 +36,7 @@ class GeocodeEarth {
                     if(resp.body.features)
                         return resp.body.features.map(f=>({
                             street:f.properties.name,
-                            city:f.properties.locality}));
+                            city:f.properties.postalcode+' '+f.properties.locality}));
                     else
                         return [];
 

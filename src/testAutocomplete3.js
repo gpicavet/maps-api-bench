@@ -10,7 +10,7 @@ const apiClass = require('./api/'+apiProvider+'.js').Api;
 const api = new apiClass(api_key);
 
 let table=[];
-csv.load(inputCsv, {delimiter: ';', parse:false, stream:true})
+csv.load(inputCsv, {delimiter: ';', parse:false, stream:true, log:false})
   .on('data', (data) => {
 
     data.gps_lat = parseFloat(data.gps_lat.replace(',','.'));
@@ -27,26 +27,47 @@ csv.load(inputCsv, {delimiter: ';', parse:false, stream:true})
   .on('end', () => {
 
 
-    table = table.slice(0,500);
+    table = table.slice(0,200);
+
+    const keyboard="azertyuiopqsdfghjklmwxcvbn".split('');
+
+    console.log('id;ref address;query;query lon;query lat;result 1;result 2;result 3;result 4;result 5');
 
     //rate limit api calls
     Promise.map(table,
         (loc, index) => {
             
             //calculate nearby location (rounding)
-            let [lon, lat] = [loc.lon.toFixed(3), loc.lat.toFixed(3)]
+            let [lon, lat, radius] = [loc.lon.toFixed(6), loc.lat.toFixed(6), 50];
 
             //autocomplete nearby partial address (mispelling last word)
             const addrParts = loc.street.toLowerCase().replace(',','').split(' ');
-            const partialAddr = addrParts[addrParts.length-1];
-            const outCsv = [index, (loc.street+', '+loc.postalCode+' '+loc.city).toLowerCase(), partialAddr, lon, lat];
-            return api.autocomplete(partialAddr, lon, lat).then(res => {
+            let partialAddr = addrParts[addrParts.length-1];
+            const pos = Math.floor(partialAddr.length*0.5);
+            const letterWithoutDiacritics = partialAddr[pos].normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+            const letterTypo = keyboard[Math.min(keyboard.indexOf(letterWithoutDiacritics)+1, keyboard.length-1)];//shift
+
+            //add letter
+            partialAddr = partialAddr.substring(0,pos)+letterTypo+partialAddr.substring(pos);
+            //change letter
+            //partialAddr = partialAddr.substring(0,pos)+letterTypo+partialAddr.substring(pos+1);
+            //double letter
+            //partialAddr = partialAddr.substring(0,pos)+partialAddr[pos]+partialAddr.substring(pos);
+
+
+            if(partialAddr.length<=4)//avoid too litle size
+                partialAddr = addrParts[addrParts.length-2]+' '+partialAddr;
+ 
+            const outCsv = [index, (loc.street+', '+loc.city+', france').toLowerCase(), partialAddr, lon, lat];
+            return api.autocomplete(partialAddr, lon, lat, radius).then(res => {
                 if(res.length>0) {
                     //get 5 first results
-                    let stringRes = res.slice(0,5).map(r=>(r.street+', '+r.city).toLowerCase());
+                    let stringRes = res.slice(0,5).map(r=>(r.street+', '+r.city).replace('"','\'').toLowerCase());
+                    //complete to have 5 strings
+                    stringRes = stringRes.concat(Array(5).fill('')).slice(0,5);
                     console.log(outCsv.concat(stringRes).join(';'));    
                 } else {
-                    console.log(outCsv.join(';'));  
+                    console.log(outCsv.concat(Array(5).fill('')).join(';'));  
                }
 
             });

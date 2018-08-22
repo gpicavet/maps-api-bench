@@ -34,22 +34,25 @@ csv.load(inputCsv, {delimiter: ';', parse:false, stream:true})
         (loc, index) => {
             
             //calculate nearby location (rounding)
-            let [lon, lat, radius] = [+loc.lon.toFixed(3), +loc.lat.toFixed(3), 500/*3 decimals = 111,1 meters*/];
+            let [lon, lat, radius] = [+loc.lon.toFixed(6), +loc.lat.toFixed(6), 50/*6 decimals = 11 centimeters*/];
 
             //autocomplete nearby partial address (last word)
             const addrParts = loc.street.toLowerCase().replace(',','').split(' ');
             const partialAddr = addrParts[addrParts.length-1];
-            const outCsv = [index, (loc.street+', '+loc.postalCode+' '+loc.city).toLowerCase(), partialAddr, lon, lat];
-            return api.autocomplete(partialAddr, lon, lat, radius).then(res => {
-                if(res.length>0) {
-                    //get 5 first results
-                    let stringRes = res.slice(0,5).map(r=>(r.street+', '+r.city).toLowerCase());
-                    console.log(outCsv.concat(stringRes).join(';'));    
-                } else {
-                    console.log(outCsv.join(';'));  
-               }
 
-            });
+            if(partialAddr.match(/[a-z]{2,}.+/)) {
+                const outCsv = [index, (loc.street+', '+loc.postalCode+' '+loc.city).toLowerCase(), partialAddr, lon, lat];
+                return api.autocomplete(partialAddr, lon, lat, radius).then(res => {
+                    if(res.length>0) {
+                        //get 5 first results
+                        let stringRes = res.slice(0,5).map(r=>(r.street+', '+r.city).toLowerCase());
+                        console.log(outCsv.concat(stringRes).join(';'));    
+                    } else {
+                        console.log(outCsv.join(';'));  
+                }
+
+                });
+            }
          
         }, {concurrency:2});
     

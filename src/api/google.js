@@ -19,15 +19,22 @@ class Google {
     }
 
     autocomplete(text,lon,lat,radius) {
+        let ext={};
+        if(radius) {
+            ext = {
+                radius:radius
+            }
+        }
         return requestpp.getAsync('https://maps.googleapis.com/maps/api/place/autocomplete/json', 
             {
-                qs:{
-                    location:lat+','+lon,
-                    radius:radius,
+                qs:{...{
+                    location:lat+','+lon,//location biased
+                    components:'country:fr',//bounded to france
+                    types:'address',
                     input:text,
                     language:'fr',
-                    key:this.api_key
-                }, 
+                    key:this.api_key}
+                ,...ext}, 
                 json:true
             }).then(
                 (resp)=> {

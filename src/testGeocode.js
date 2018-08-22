@@ -15,19 +15,17 @@ let table=[];
 csv.load(inputCsv, {delimiter: ';', parse:false, stream:true})
   .on('data', (data) => {
 
-    if(data.address.match(/[1-9]+.*/) && 
-        data.address.match(/.*[a-z]+.*/) && 
-        data.gps_lat!=0 && data.gps_long!=0//only if geo data are present
-    ) {                    
+                 
         data.gps_lat = parseFloat(data.gps_lat.replace(',','.'));
         data.gps_long = parseFloat(data.gps_long.replace(',','.'));
         table.push({
             street:data.address,
             city:data.city,
+            postalCode:data.postal_code,
             lon:data.gps_long,
             lat:data.gps_lat
         });
-    }
+    
   })
   .on('end', () => {
 
