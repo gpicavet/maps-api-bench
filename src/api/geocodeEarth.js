@@ -25,6 +25,7 @@ class GeocodeEarth {
                     'focus.point.lon':(+lon).toFixed(6),
                     'focus.point.lat':(+lat).toFixed(6),
                     layers:'address',
+                    //sources:'oa',//openaddresses
                     text:text,
                     api_key:this.api_key
                 },...ext}, 

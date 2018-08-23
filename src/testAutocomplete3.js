@@ -41,7 +41,7 @@ csv.load(inputCsv, {delimiter: ';', parse:false, stream:true, log:false})
             let [lon, lat, radius] = [loc.lon.toFixed(6), loc.lat.toFixed(6), 50];
 
             //autocomplete nearby partial address (mispelling last word)
-            const addrParts = loc.street.toLowerCase().replace(',','').split(' ');
+            const addrParts = loc.street.toLowerCase().replace(/,/g,'').replace(/"/g,'\'').split(' ');
             let partialAddr = addrParts[addrParts.length-1];
             const pos = Math.floor(partialAddr.length*0.5);
             const letterWithoutDiacritics = partialAddr[pos].normalize('NFD').replace(/[\u0300-\u036f]/g, "");
@@ -55,20 +55,24 @@ csv.load(inputCsv, {delimiter: ';', parse:false, stream:true, log:false})
             //partialAddr = partialAddr.substring(0,pos)+partialAddr[pos]+partialAddr.substring(pos);
 
 
-            if(partialAddr.length<=4)//avoid too litle size
+            if(partialAddr.length<=4)//avoid small word
                 partialAddr = addrParts[addrParts.length-2]+' '+partialAddr;
- 
-            const outCsv = [index, (loc.street+', '+loc.city+', france').toLowerCase(), partialAddr, lon, lat];
+             
+            //ge ref address with postal code
+             //const refAddr=(loc.street+', '+loc.postalCode+' '+loc.city).replace(/"/g,'\'').toLowerCase();
+             //google ref
+             const refAddr=(loc.street.replace(/,/g,'')+', '+loc.city+', france').replace(/"/g,'\'').toLowerCase();
+
+             const outCsv = [index, refAddr, partialAddr, lon, lat];
             return api.autocomplete(partialAddr, lon, lat, radius).then(res => {
+                let stringRes = [];
                 if(res.length>0) {
                     //get 5 first results
-                    let stringRes = res.slice(0,5).map(r=>(r.street+', '+r.city).replace('"','\'').toLowerCase());
-                    //complete to have 5 strings
-                    stringRes = stringRes.concat(Array(5).fill('')).slice(0,5);
-                    console.log(outCsv.concat(stringRes).join(';'));    
-                } else {
-                    console.log(outCsv.concat(Array(5).fill('')).join(';'));  
-               }
+                    stringRes = res.slice(0,5).map(r=>(r.street+', '+r.city).replace(/"/g,'\'').toLowerCase());
+                }
+                //complete to have 5 strings
+                stringRes = stringRes.concat(Array(5).fill('')).slice(0,5);
+                console.log(outCsv.concat(stringRes).join(';')); 
 
             });
          
